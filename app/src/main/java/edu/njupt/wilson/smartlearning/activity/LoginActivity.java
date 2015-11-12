@@ -186,6 +186,7 @@ public class LoginActivity extends Activity {
                         String json = userInfo.getData().toString();
                         Log.d("LoginActivity.login() --->", json);
                         UserResult userResult = JsonUtil.fromObject(json, UserResult.class);
+                        app.setIsAppLogin(userResult.getIsAppLogin());
                         app.setUserId(userResult.getUserId());
                         app.setUserName(userResult.getUserName());
                         app.setUserSex(userResult.getUserSex());
@@ -227,7 +228,7 @@ public class LoginActivity extends Activity {
                     }
 
                     //跳转到首页
-                    Intent intent = new Intent(LoginActivity.this, VideoPlayActivity_.class);
+                    Intent intent = new Intent(LoginActivity.this, InitActivity_.class);
                     startActivity(intent);
 
                     LoginActivity.this.finish();

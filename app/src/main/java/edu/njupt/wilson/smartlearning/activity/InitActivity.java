@@ -59,13 +59,13 @@ public class InitActivity extends BaseFragmentActivity {
     @ViewById(R.id.morebt)
     ImageView morebt;
 
-    @ViewById(R.id.classpage)
+    @ViewById(R.id.coursese)
     TextView course;
 
-    @ViewById(R.id.discusspage)
+    @ViewById(R.id.communication)
     TextView discuss;
 
-    @ViewById(R.id.personalpage)
+    @ViewById(R.id.me)
     TextView personal;
 
     private List<TextView> textViewList;

@@ -28,7 +28,6 @@ import edu.njupt.wilson.smartlearning.application.ExitApplication;
 import edu.njupt.wilson.smartlearning.domain.RestResult;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * Author: wilson
@@ -106,7 +105,7 @@ public class ReplyActivity extends Activity{
                     Thread.sleep(2000);
                     //调用接口完成操作
                     String comContent = replyContent;
-                    addAnswer = communicationApi.addComment(userId, questionId, comContent, URLUtil.getIsAppLogin());
+                    addAnswer = communicationApi.addComment(userId, questionId, comContent, ((CustomerApplication) getApplication()).getIsAppLogin());
                     if (addAnswer == null){
                         throw new Exception("无网络连接！");
                     }

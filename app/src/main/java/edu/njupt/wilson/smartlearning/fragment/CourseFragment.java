@@ -21,6 +21,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -29,13 +30,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.support.annotation.Nullable;
 
-
-import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
 
@@ -47,13 +46,13 @@ import edu.njupt.wilson.smartlearning.R;
 import edu.njupt.wilson.smartlearning.activity.CourseInfoDetailActivity;
 import edu.njupt.wilson.smartlearning.adapter.CourseAdapter;
 import edu.njupt.wilson.smartlearning.api.CourseApi;
+import edu.njupt.wilson.smartlearning.application.CustomerApplication;
 import edu.njupt.wilson.smartlearning.application.ExitApplication;
 import edu.njupt.wilson.smartlearning.dataSource.CourseInfoData;
 import edu.njupt.wilson.smartlearning.domain.RestResult;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.ObjectChange;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * <p> </p>
@@ -145,7 +144,7 @@ public class CourseFragment extends BaseFragment {
                 try {
                     Thread.sleep(2000);
 
-                    course = courseApi.getAllCourse(URLUtil.getIsAppLogin());
+                    course = courseApi.getAllCourse(new CustomerApplication().getIsAppLogin());
 
                 } catch (Exception e){
                     Log.e("CourseFragment", "课程数据加载失败", e);

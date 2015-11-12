@@ -17,9 +17,9 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
-import org.androidannotations.annotations.UiThread;
 
 import edu.njupt.wilson.smartlearning.R;
 import edu.njupt.wilson.smartlearning.api.UserApi;
@@ -28,7 +28,6 @@ import edu.njupt.wilson.smartlearning.application.ExitApplication;
 import edu.njupt.wilson.smartlearning.domain.RestResult;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * Author: wilson
@@ -119,7 +118,7 @@ public class ModifyNameActivity extends Activity {
                     try{
                         Thread.sleep(2000);
                         //TODO 接口获取数据，并更新数据
-                        modifyName = userApi.modifyName(userId, newName, URLUtil.getIsAppLogin());
+                        modifyName = userApi.modifyName(userId, newName, ((CustomerApplication) getApplication()).getIsAppLogin());
                     } catch (Exception e){
                         Log.e("ModifyNameActivity", "修改用户名出错！", e);
                         return false;

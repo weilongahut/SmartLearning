@@ -38,12 +38,12 @@ import org.androidannotations.annotations.rest.RestService;
 
 import edu.njupt.wilson.smartlearning.R;
 import edu.njupt.wilson.smartlearning.api.CommunicationApi;
+import edu.njupt.wilson.smartlearning.application.CustomerApplication;
 import edu.njupt.wilson.smartlearning.application.ExitApplication;
 import edu.njupt.wilson.smartlearning.domain.RestResult;
 import edu.njupt.wilson.smartlearning.popUpWindow.MorePopUpWindow;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * 添加主题
@@ -114,7 +114,7 @@ public class AddThemeActivity extends Activity {
             protected Boolean doInBackground(Void... params) {
                 try {
                     Thread.sleep(2000);
-                    addQuestion = communicationApi.addCommunication(userId, questionTheme, comContent, URLUtil.getIsAppLogin());
+                    addQuestion = communicationApi.addCommunication(userId, questionTheme, comContent, ((CustomerApplication) getApplication()).getIsAppLogin());
 
                 } catch (Exception e){
                     Log.e("AddThemeActivity", "添加主题后台任务出错！", e);

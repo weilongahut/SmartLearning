@@ -34,6 +34,9 @@ public class UserResult {
     //性别
     private String userSex;
 
+    //用户登录标识
+    private String isAppLogin;
+
     public int getUserId() {
         return userId;
     }
@@ -64,5 +67,14 @@ public class UserResult {
 
     public void setUserSex(String userSex) {
         this.userSex = userSex;
+    }
+
+
+    public String getIsAppLogin() {
+        return isAppLogin;
+    }
+
+    public void setIsAppLogin(String isAppLogin) {
+        this.isAppLogin = isAppLogin;
     }
 }

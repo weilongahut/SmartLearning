@@ -22,9 +22,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
-import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
 
@@ -43,7 +43,6 @@ import edu.njupt.wilson.smartlearning.popUpWindow.MorePopUpWindow;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.ObjectChange;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * Author: wilson
@@ -148,7 +147,7 @@ public class MyQuestionActivity extends Activity{
                 try {
                     Thread.sleep(2000);
                     //TODO 调用接口完成数据操作
-                    communication = communicationApi.getUserCommunication(userId, questionId, URLUtil.getIsAppLogin()); //获取全部问题
+                    communication = communicationApi.getUserCommunication(userId, questionId, ((CustomerApplication) getApplication()).getIsAppLogin()); //获取全部问题
                 } catch (Exception e){
                     Log.e("MyQuestionActivity", "", e);
                     return false;

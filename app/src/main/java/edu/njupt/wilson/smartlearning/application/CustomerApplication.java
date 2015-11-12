@@ -26,11 +26,14 @@ public class CustomerApplication extends Application{
 
     private static final String VALUE = "Logout";
 
-    private String value;
-    private int userId;
-    private String userName;
-    private String userPhoto;
-    private String userSex;
+    private static String value;
+    private static int userId;
+    private static String userName;
+    private static String userPhoto;
+    private static String userSex;
+    private static String isAppLogin;
+
+
 
     @Override
     public void onCreate(){
@@ -77,5 +80,13 @@ public class CustomerApplication extends Application{
 
     public void setUserSex(String userSex) {
         this.userSex = userSex;
+    }
+
+    public String getIsAppLogin() {
+        return isAppLogin;
+    }
+
+    public void setIsAppLogin(String isAppLogin) {
+        this.isAppLogin = isAppLogin;
     }
 }

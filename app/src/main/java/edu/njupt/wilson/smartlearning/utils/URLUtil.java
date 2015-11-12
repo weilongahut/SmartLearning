@@ -39,20 +39,6 @@ public class URLUtil {
         return root + path;
     }
 
-    /**
-     * 是否登录
-     * @return
-     */
-    public static final String getIsAppLogin(){
-        String str = "";
-        int i = 8;
-        while(i > 0){
-            str += Math.random() * 9;
-            i--;
-        }
-
-        return MD5Util.MD5(str);
-    }
 
     /**
      * 获取媒体类型

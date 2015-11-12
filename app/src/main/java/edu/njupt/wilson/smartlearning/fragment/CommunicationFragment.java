@@ -61,7 +61,6 @@ import edu.njupt.wilson.smartlearning.domain.RestResult;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.ObjectChange;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * <p>交流页面卡</p>
@@ -170,7 +169,7 @@ public class CommunicationFragment extends BaseFragment {
                     Thread.sleep(2000);
                     //在这里添加调用接口获取数据的代码
 
-                    communication = communicationApi.getAllCommunication(id, type, URLUtil.getIsAppLogin()); //获取全部课程
+                    communication = communicationApi.getAllCommunication(id, type, new CustomerApplication().getIsAppLogin()); //获取全部课程
                 } catch (Exception e){
 //                    e.printStackTrace();
                     Log.e("CommunicationFragment", "加载数据出错", e);

@@ -38,9 +38,9 @@ import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OnActivityResult;
+import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
-import org.androidannotations.annotations.UiThread;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -48,13 +48,13 @@ import java.util.LinkedList;
 import edu.njupt.wilson.smartlearning.R;
 import edu.njupt.wilson.smartlearning.adapter.AnswerDetailAdapter;
 import edu.njupt.wilson.smartlearning.api.CommunicationApi;
+import edu.njupt.wilson.smartlearning.application.CustomerApplication;
 import edu.njupt.wilson.smartlearning.application.ExitApplication;
 import edu.njupt.wilson.smartlearning.dataSource.AllQuestionData;
 import edu.njupt.wilson.smartlearning.domain.RestResult;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.ObjectChange;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * <p> </p>
@@ -137,7 +137,7 @@ public class AnswerDetailActivity extends Activity {
                 try {
                     Thread.sleep(2000);
 
-                    answerDetail = communicationApi.findCommentByQuestionId(questionId, answerId, type, URLUtil.getIsAppLogin());
+                    answerDetail = communicationApi.findCommentByQuestionId(questionId, answerId, type, ((CustomerApplication) getApplication()).getIsAppLogin());
 
                 }catch (Exception e){
                     Log.e("AnswerDetailActivity", "加载答案出错", e);

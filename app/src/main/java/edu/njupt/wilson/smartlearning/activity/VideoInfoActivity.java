@@ -29,6 +29,7 @@ import java.util.LinkedList;
 import edu.njupt.wilson.smartlearning.R;
 import edu.njupt.wilson.smartlearning.adapter.VideoAdapter;
 import edu.njupt.wilson.smartlearning.api.CourseApi;
+import edu.njupt.wilson.smartlearning.application.CustomerApplication;
 import edu.njupt.wilson.smartlearning.application.ExitApplication;
 import edu.njupt.wilson.smartlearning.dataSource.VideoInfoData;
 import edu.njupt.wilson.smartlearning.domain.RestResult;
@@ -36,7 +37,6 @@ import edu.njupt.wilson.smartlearning.popUpWindow.MorePopUpWindow;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.ObjectChange;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * Author: wilson
@@ -117,7 +117,7 @@ public class VideoInfoActivity extends Activity{
                     Thread.sleep(2000);
 
                     //调用接口
-                    videoInfo = courseApi.getVideoByCourse(courseId, URLUtil.getIsAppLogin());
+                    videoInfo = courseApi.getVideoByCourse(courseId, ((CustomerApplication) getApplication()).getIsAppLogin());
                     if (videoInfo == null){
                         throw new Exception("无网络连接！");
                     }

@@ -27,7 +27,6 @@ import edu.njupt.wilson.smartlearning.application.ExitApplication;
 import edu.njupt.wilson.smartlearning.domain.RestResult;
 import edu.njupt.wilson.smartlearning.utils.MyExceptionHandler;
 import edu.njupt.wilson.smartlearning.utils.UIHelper;
-import edu.njupt.wilson.smartlearning.utils.URLUtil;
 
 /**
  * Author: wilson
@@ -162,7 +161,7 @@ public class ModifySexActivity extends Activity {
             protected Boolean doInBackground(Void... params) {
                 try {
                     //TODO 调用接口修改用户数据
-                    modifySex = userApi.modifyUserSex(userId, sex, URLUtil.getIsAppLogin());
+                    modifySex = userApi.modifyUserSex(userId, sex, ((CustomerApplication) getApplication()).getIsAppLogin());
 
                 } catch (Exception e){
                     Log.e("ModifySexActivity", "修改用户性别出错！", e);
