@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~    Copyright @2015 wilson
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<resources>
+    <color name="transparent" >#00000000</color>
+    <color name="list_item_title">#fff</color>
+
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <!-- 黑色 -->
+    <color name="greenyellow">#ADFF2F</color>
+    <color name="green">#008000</color>
+    <color name="lightgray">#D3D3D3</color>
+    <!-- 亮灰色 -->
+    <color name="gray">#8E8E8E</color>
+    <!-- 灰色 -->
+    <color name="lightgreen">#2fff3e</color>
+    <color name="holo_light">#E8E8E7</color>
+    <color name="replygreen">#7ecb0e</color>
+    <color name="red">#ff0000</color>
+    <color name="darkblue">#1a68a8</color>
+    <color name="bantouming">#b0000000</color>
+    <color name="bantouming1">#50000000</color>
+    <color name="orange">#f37f0e</color>
+    <color name="darkorange">#ffd45b28</color>
+    <color name="lightblue">#55c8d6</color>
+
+</resources>

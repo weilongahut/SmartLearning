@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+
+    compileSdkVersion 19
+    buildToolsVersion "20.0.0"
+
+    packagingOptions {
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+    }
+
+    defaultConfig {
+        applicationId "edu.njupt.wilson.smartlearning"
+        minSdkVersion 11
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+
+dependencies {
+    compile project(':Android-PullToRefresh')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.larswerkman:HoloColorPicker:1.3'
+    compile 'com.j256.ormlite:ormlite-android:4.45'
+    compile 'com.nhaarman.listviewanimations:library:2.6.0'
+    compile 'com.github.johnkil.android-appmsg:appmsg:1.2.0'
+    compile 'com.joanzapata.android:base-adapter-helper:1.1.3'
+    compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+    apt "org.androidannotations:androidannotations:3.2"
+    compile "org.androidannotations:androidannotations-api:3.2"
+    
+
+}
+
+configurations {
+    apt
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+        resourcePackageName 'edu.njupt.wilson.smartlearning'
+    }
+}
