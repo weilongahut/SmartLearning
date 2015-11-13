@@ -43,7 +43,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 import edu.njupt.wilson.smartlearning.R;
-import edu.njupt.wilson.smartlearning.activity.CourseInfoDetailActivity;
+import edu.njupt.wilson.smartlearning.activity.CourseInfoDetailActivity_;
 import edu.njupt.wilson.smartlearning.adapter.CourseAdapter;
 import edu.njupt.wilson.smartlearning.api.CourseApi;
 import edu.njupt.wilson.smartlearning.application.CustomerApplication;
@@ -89,6 +89,7 @@ public class CourseFragment extends BaseFragment {
     @Bean
     MyExceptionHandler exceptionHandler;
 
+
     @AfterViews
     void afterViews(){
 
@@ -124,6 +125,7 @@ public class CourseFragment extends BaseFragment {
         }
         return mFragmentView;
     }
+
 
     @Override
     protected void lazyLoad() {
@@ -194,7 +196,7 @@ public class CourseFragment extends BaseFragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), CourseInfoDetailActivity.class);
+                Intent intent = new Intent(getActivity(), CourseInfoDetailActivity_.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("courseInfoData", courseInfoData);
                 intent.putExtras(bundle);

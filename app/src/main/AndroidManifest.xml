@@ -40,10 +40,6 @@
         <activity android:name=".activity.InitActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
 
-        <!-- 首页 -->
-        <activity android:name=".activity.HomeActivity_"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
-
         <!-- 个人中心 -->
         <activity android:name=".activity.PersonalInfoActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
