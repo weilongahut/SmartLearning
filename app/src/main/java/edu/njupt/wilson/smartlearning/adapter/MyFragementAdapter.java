@@ -23,9 +23,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.njupt.wilson.smartlearning.fragment.CommunicationFragment;
-import edu.njupt.wilson.smartlearning.fragment.CourseFragment;
-import edu.njupt.wilson.smartlearning.fragment.PersonalFragment;
+import edu.njupt.wilson.smartlearning.fragment.CommunicationFragment_;
+import edu.njupt.wilson.smartlearning.fragment.CourseFragment_;
+import edu.njupt.wilson.smartlearning.fragment.PersonalFragment_;
 
 /**
  * <p> </p>
@@ -38,9 +38,9 @@ public class MyFragementAdapter extends FragmentStatePagerAdapter {
 
     public MyFragementAdapter(FragmentManager fm){
         super(fm);
-        this.list.add(new CourseFragment());
-        this.list.add(new CommunicationFragment());
-        this.list.add(new PersonalFragment());
+        this.list.add(new CourseFragment_());
+        this.list.add(new CommunicationFragment_());
+        this.list.add(new PersonalFragment_());
 
     }
 
